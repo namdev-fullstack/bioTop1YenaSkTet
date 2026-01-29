@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top1YenaVn - Chúc Mừng Năm Mới</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+      50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); }
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes firework {
+      0% { transform: translateY(100vh) scale(0); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+    }
+    
+    .tet-bg {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 25%, #ff6b6b 50%, #ffd93d 75%, #ff6b6b 100%);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .tet-card {
+      background: linear-gradient(145deg, #fff8f0 0%, #fff3e0 100%);
+      animation: glow 3s ease-in-out infinite;
+    }
+    
+    .tet-button {
+      background: linear-gradient(45deg, #ff0000, #cc0000);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tet-button::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: rotate(45deg);
+      transition: all 0.5s;
+    }
+    
+    .tet-button:hover::before {
+      animation: shine 0.5s ease-in-out;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .firework {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      animation: firework 3s ease-out infinite;
+      pointer-events: none;
+    }
+    
+    .sparkle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+    
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .tet-badge {
+      background: linear-gradient(45deg, #ff0000, #ffd700);
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    
+    .tet-text {
+      background: linear-gradient(45deg, #ff0000, #ffd700, #ff0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 200%;
+      animation: gradient 3s ease infinite;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen tet-bg flex items-center justify-center p-4 relative">
+  <!-- Pháo hoa nền -->
+  <div class="firework" style="left: 10%; animation-delay: 0s; background: #ff0000;"></div>
+  <div class="firework" style="left: 30%; animation-delay: 1s; background: #ffd700;"></div>
+  <div class="firework" style="left: 50%; animation-delay: 2s; background: #ff6b6b;"></div>
+  <div class="firework" style="left: 70%; animation-delay: 0.5s; background: #ff0000;"></div>
+  <div class="firework" style="left: 90%; animation-delay: 1.5s; background: #ffd700;"></div>
+  
+  <div class="w-full max-w-sm tet-card rounded-3xl shadow-2xl p-6 relative">
+    <!-- Hoa mai trang trí -->
+    <div class="absolute top-2 left-2 text-2xl">🌸</div>
+    <div class="absolute top-2 right-2 text-2xl">🌸</div>
+    <div class="absolute bottom-2 left-2 text-2xl">🌸</div>
+    <div class="absolute bottom-2 right-2 text-2xl">🌸</div>
+    <!-- Avatar -->
+    <div class="flex flex-col items-center text-center space-y-3">
+      <div class="relative w-28 h-28 rounded-full overflow-hidden ring-4 ring-red-300 shadow-lg">
+        <img src="./avatar.jpg" alt="Avatar" class="w-full h-full object-cover" />
+      </div>
+
+      <div class="flex items-center gap-2">
+        <h1 class="text-xl font-bold text-red-600">Top1Yena 🐲</h1>
+        <!-- Dấu xác minh -->
+        <span class="relative flex items-center justify-center w-5 h-5">
+          <span class="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 animate-ping"></span>
+          <span
+            class="relative inline-flex items-center justify-center w-5 h-5 rounded-full bg-red-500 text-white shadow">
+            <i class="fa-solid fa-check text-xs"></i>
+          </span>
+        </span>
+      </div>
+
+      <p class="text-sm text-gray-700 leading-snug">
+        🎯 Nhận chạy sự kiện <b class="text-red-600">Chung Sức Liên Quân</b><br />
+        <!-- 💥 Làm nhanh – Uy tín – Chỉ 1 người live duy nhất<br />
+        🧧 <b class="text-red-600">Ưu đãi đặc biệt dịp Tết 2025 🐲</b><br /> -->
+        💬 Hỗ trợ 24/24 qua Zalo chính chủ
+      </p>
+    </div>
+
+    <!-- Badges -->
+    <div class="grid grid-cols-2 gap-3 mt-4">
+      <span
+        class="flex items-center justify-center gap-1 px-3 py-1 text-xs rounded-full tet-badge font-semibold shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300">
+        <i class="fa-solid fa-shield-halved text-[13px]"></i>
+        Uy tín 100%
+      </span>
+
+      <span
+        class="flex items-center justify-center gap-1 px-3 py-1 text-xs rounded-full tet-badge font-semibold shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300">
+        <i class="fa-solid fa-bolt text-[13px]"></i>
+        Làm nhanh
+      </span>
+    </div>
+<!-- Chung Sức Rương -->
+<div class="mt-4">
+  <p class="font-semibold text-gray-800 mb-2 flex items-center gap-1">
+    🧧 <span>Chung Sức Nhận Skin SS - Khai Vận 2025</span>
+  </p>
+
+  <div class="space-y-2 text-[15px] font-semibold text-gray-800">
+    <div class="flex justify-between items-center bg-gradient-to-r from-red-50 to-yellow-50 rounded-xl px-4 py-2 border-2 border-red-300 shadow hover:shadow-lg hover:scale-105 transition-all duration-300">
+      <span class="font-medium">Rương Skin SS</span>
+      <span class="text-red-600 font-bold">? </span>
+    </div>
+    <div class="flex justify-between items-center bg-gradient-to-r from-red-50 to-yellow-50 rounded-xl px-4 py-2 border-2 border-red-300 shadow hover:shadow-lg hover:scale-105 transition-all duration-300">
+      <span class="font-medium">Muốn làm nhanh trong 10 phút</span>
+      <span class="text-red-600 font-bold"> + 20 cá </span>
+    </div>
+    
+  </div>
+</div>
+
+    <!-- ⚠️ Chú ý -->
+    <div class="mt-6 bg-gradient-to-br from-red-50 to-yellow-50 border-2 border-red-300 rounded-xl p-3 text-sm text-gray-800 shadow-lg">
+      <h3 class="font-bold text-red-700 mb-2 flex items-center gap-2">
+        ⚠️ <span>Lưu ý đặc biệt dịp Tết:</span>
+      </h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          <b>Zalo chính chủ:</b>
+          <span class="text-blue-700 font-semibold">Nguyen Nam</span>
+        </li>
+        <li><b>Chỉ có duy nhất 1 người live</b> – tránh giả mạo</li>
+        <li><b>Kết bạn rồi mới nhắn</b>, để tránh việc không nhận tin nhắn người lạ</li>
+      </ul>
+    </div>
+
+    <!-- ✅ 3 bước -->
+    <div class="mt-5 bg-gradient-to-br from-red-50 to-yellow-50 border-2 border-red-300 rounded-xl p-3 text-sm text-gray-800 shadow-lg">
+      <h3 class="font-bold text-red-700 mb-2 flex items-center gap-2">
+        ✅ <span>3 bước Lấy Skin SS:</span>
+      </h3>
+      <ol class="list-decimal list-inside space-y-1">
+        <li>Kết bạn Zalo chính chủ</li>
+        <li>Chuyển khoản & chụp bill xác nhận</li>
+        <li>Gửi mã sự kiện để chạy đơn ngay ⚡</li>
+      </ol>
+    </div>
+
+    <!-- Liên hệ -->
+    <div class="mt-6">
+      <div class="flex flex-col items-center gap-4">
+        <a href="https://zalo.me/0966216495" target="_blank"
+          class="tet-button flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-white font-bold shadow-xl hover:shadow-2xl hover:scale-[1.05] transition-all duration-300 w-full relative">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+            class="w-6 h-6 bg-white rounded p-0.5" />
+           Chat Zalo Chính Chủ
+        </a>
+
+        <p class="text-sm text-gray-700 font-medium">
+          📱 Số điện thoại:
+          <span class="text-red-600 font-bold">0966 - 216 - 495</span>
+        </p>
+
+        <img src="./qr.jpg" alt="QR Zalo"
+          class="w-44 rounded-lg border-2 border-red-300 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 object-contain" />
+      </div>
+    </div>
+
+    <p class="text-center text-sm italic font-bold text-red-600 mt-5 text-lg">
+      🐲 Chúc Mừng Năm Mới 2025 - An Khang Thịnh Vượng 🐲
+    </p>
+    <p class="text-center text-xs italic text-gray-600 mt-2">
+      💙 Uy tín – Tốc độ – Nhận Skin SS Cùng Nam Nhé💙
+    </p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</body>
+
+</html>
